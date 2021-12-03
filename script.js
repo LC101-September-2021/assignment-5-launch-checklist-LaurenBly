@@ -3,7 +3,7 @@
 const { validateInput } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
-
+console.log("load")
    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
    let listedPlanetsResponse;
@@ -23,17 +23,17 @@ window.addEventListener("load", function() {
         let copilotName = document.getElementsByName("copilotName").item(0);
         let fuelLevel = document.querySelector("input[name=fuelLevel]"); // querySelector gives you more "fine control" on what you're selecting
         let cargoMass = document.querySelector("input[name=cargoMass]");
-
+        let errorMessage = '';
         
         if (validateInput(pilotName) === "Empty") {
             alert("You forgot to enter the pilot's name");
-        } if (validateInput(copilotName) === "Empty") {
+        } else if (validateInput(copilotName) === "Empty") {
             alert("Don't forget about the co-pilot!");
         } if (validateInput(fuelLevel) === "Not a Number") {
             alert("You're gonna need some fuel to fly!");
         } if (validateInput(cargoMass) === "Not a Number") {
             alert("What's the cargo mass?");
-        }
+        } 
     });
     
 });
