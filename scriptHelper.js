@@ -19,7 +19,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 function validateInput(testInput) {
     if (testInput.value === "") {
         return "Emtpy"
-     } if (testInput.value === NaN) {
+     } if (isNan(testInput.value)) {
          return "Not a Number"
      }
 }
