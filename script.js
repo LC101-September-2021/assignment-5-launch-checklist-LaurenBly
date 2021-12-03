@@ -13,7 +13,11 @@ window.addEventListener("load", function() {
        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
    })
    
-    const formSubmitButton = document.getElementById("pilotName");
+    const formSubmitButton = document.getElementById("formSubmit");
+    formSubmitButton.addEventListener("click", function(event) {
+        event.preventDefault();
+    })
+    let pilotName = document.getElementsById("pilotName");
     let copilotName = document.getElementsByName("copilotName").item(0);
     let fuelLevel = document.querySelector("input[name=fuelLevel]"); // querySelector gives you more "fine control" on what you're selecting
     let cargoMass = document.querySelector("input[name=cargoMass]");
