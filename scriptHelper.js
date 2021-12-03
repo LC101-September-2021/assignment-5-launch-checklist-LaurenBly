@@ -17,7 +17,11 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 function validateInput(testInput) {
-   if(pilotName.value ===)
+    if (testInput.value === "") {
+        return "Emtpy"
+     } if (testInput.value === NaN) {
+         return "Not a Number"
+     }
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
