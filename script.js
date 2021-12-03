@@ -1,9 +1,9 @@
 // Write your JavaScript code here!
 
-const { validateInput } = require("./scriptHelper");
+// const { validateInput } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
-console.log("load")
+
    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
    let listedPlanetsResponse;
@@ -23,17 +23,22 @@ console.log("load")
         let copilotName = document.getElementsByName("copilotName").item(0);
         let fuelLevel = document.querySelector("input[name=fuelLevel]"); // querySelector gives you more "fine control" on what you're selecting
         let cargoMass = document.querySelector("input[name=cargoMass]");
-        let errorMessage = '';
-        
-        if (validateInput(pilotName) === "Empty") {
-            alert("You forgot to enter the pilot's name");
-        } else if (validateInput(copilotName) === "Empty") {
-            alert("Don't forget about the co-pilot!");
-        } if (validateInput(fuelLevel) === "Not a Number") {
-            alert("You're gonna need some fuel to fly!");
-        } if (validateInput(cargoMass) === "Not a Number") {
-            alert("What's the cargo mass?");
-        } 
+        let errorMessage = 'All fields are required.';
+        let shouldAlert = false;
+
+        if (validateInput(pilotName.value) === "Empty") {
+            shouldAlert = true; 
+          } 
+        if (validateInput(copilotName.value) === "Empty") {
+            shouldAlert = true; 
+          }
+          if (validateInput(fuelLevel.value) === "Not a Number" || validateInput(fuelLevel.value) === "Empty") {
+            shouldAlert = true; 
+          }
+          if (validateInput(cargoMass.value) === "Not a Number"  || validateInput(cargoMass.value) === "Empty") {
+            shouldAlert = true; 
+          }
+        alert(errorMessage)
     });
     
 });
