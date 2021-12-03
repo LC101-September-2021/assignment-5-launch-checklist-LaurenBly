@@ -16,20 +16,21 @@ window.addEventListener("load", function() {
     const formSubmitButton = document.getElementById("formSubmit");
     formSubmitButton.addEventListener("click", function(event) {
         event.preventDefault();
-    })
-    let pilotName = document.getElementsById("pilotName");
-    let copilotName = document.getElementsByName("copilotName").item(0);
-    let fuelLevel = document.querySelector("input[name=fuelLevel]"); // querySelector gives you more "fine control" on what you're selecting
-    let cargoMass = document.querySelector("input[name=cargoMass]");
 
-    if (!pilotName.value.length) {
-        alert("You forgot to enter the pilot's name");
-    } if (!copilotName.value.length) {
-        alert("Don't forget about the co-pilot!");
-    } if (!fuelLevel.value.length) {
-        alert("You're gonna need some fuel to fly!");
-    } if(!cargoMass.value.length) {
-        alert("What's the cargo mass?");
-    }
+        let pilotName = document.getElementsById("pilotName");
+        let copilotName = document.getElementsByName("copilotName").item(0);
+        let fuelLevel = document.querySelector("input[name=fuelLevel]"); // querySelector gives you more "fine control" on what you're selecting
+        let cargoMass = document.querySelector("input[name=cargoMass]");
 
+        if (!pilotName.value.length) {
+            alert("You forgot to enter the pilot's name");
+        } if (!copilotName.value.length) {
+            alert("Don't forget about the co-pilot!");
+        } if (!fuelLevel.value.length) {
+            alert("You're gonna need some fuel to fly!");
+        } if(!cargoMass.value.length) {
+            alert("What's the cargo mass?");
+        }
+    });
+    
 });
