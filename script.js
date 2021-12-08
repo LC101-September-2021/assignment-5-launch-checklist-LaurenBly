@@ -4,13 +4,22 @@
 
 window.addEventListener("load", async function() {
 
-   let listedPlanetsResponse = await myFetch();
-   console.log(listedPlanetsResponse[3]);
-   // Set listedPlanetsResponse equal to the value returned by calling myFetch()
+    let listedPlanets;
+    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
+    let listedPlanetsResponse = myFetch();
+    listedPlanetsResponse.then(function (result) {
+        listedPlanets = result;
+    
+    }).then(function () {
+        // console.log(listedPlanets);
+        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
+        pickPlanet(listedPlanets);
+    })
+
 // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
    
     const formSubmitButton = document.getElementById("formSubmit");
-    formSubmitButton.addEventListener("click", function(event) {
+    formSubmitButton.addEventListener("submit", function(event) {
         event.preventDefault();
 
         let pilotName = document.getElementById("pilotName");
